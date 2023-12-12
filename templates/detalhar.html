@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhar</title>
-</head>
-<body>
-    <h1>Detalhar carro</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Detalhar Carro ou Cliente{% endblock %}
+
+{% block content %}
+    <h1>Detalhes do Carro ou Cliente</h1>
+    
+    <h2>Detalhes do Carro</h2>
+    <p>Modelo: {{ carro.modelo }}</p>
+    <p>Ano: {{ carro.ano }}</p>
+    <p>Placa: {{ carro.placa }}</p>
+
+    <!-- Adicione informações específicas do Cliente aqui -->
+
+    <a href="{% url 'listar' %}">Voltar para a lista</a>
+{% endblock %}

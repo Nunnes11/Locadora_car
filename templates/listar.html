@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar</title>
-</head>
-<body>
-    <h1>Listar carros</h1>
+{% extends 'base.html' %}
+
+{% block title %}Listar Carros e Clientes{% endblock %}
+
+{% block content %}
+    <h1>Listagem de Carros e Clientes</h1>
     
-</body>
-</html>
+    <h2>Carros</h2>
+    <ul>
+        {% for carro in carros %}
+            <li>{{ carro.modelo }} - {{ carro.ano }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Clientes</h2>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nome }} - {{ cliente.email }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
